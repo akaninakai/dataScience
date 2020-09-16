@@ -1,0 +1,5 @@
+SELECT DISTINCT OWNER, TABLE_NAME
+  FROM DBA_TAB_PRIVS  
+ WHERE GRANTEE IN (SELECT granted_role 
+                     FROM DBA_ROLE_PRIVS 
+                    WHERE GRANTEE = 'E464592');
